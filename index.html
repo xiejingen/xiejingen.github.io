@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #333;
+    }
+
+    #cvs {
+      display: block;
+      background: #fff;
+      margin: 0 auto;
+    }
+    .snake {
+       background-image: url('images/yan.jpg')
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id='cvs' width="1400" height="600"></canvas>
+
+</body>
+
+</html>
+<script src='./Food.js'></script>
+<script src='./Snake.js'></script>
+<script src='./Game.js'></script>
+<script>
+  /*
+  游戏对象,update方法，每次update蛇移动；
+  render方法  统一地把蛇和食物渲染出来；游戏开始，每隔一段时间
+  调用update(),render();  food,snake,canvas,context=canvas.Getcontext('2d);food的位置
+  
+  */
+  //获取画布
+  var cvs = document.getElementById('cvs');
+  
+
+  //用游戏对象把所有的对象都管理起来
+  var game = new Game(cvs);
+  var Snake=new Snake();   
+  //调用start方法
+  game.start();
+</script>
